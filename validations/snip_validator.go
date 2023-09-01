@@ -1,17 +1,18 @@
 package validations
 
 import (
-	"regexp"
-
 	model "github.com/omjogani/snip/models"
 )
 
-func isSnipValid(snip model.Snip) string {
-	isSnipEmpty := regexp.MustCompile(`/^(?!\s*$).+/`)
+func IsSnipDataValid(snip model.Snip) string {
+	// Title Validations
+	if len(snip.Title) < 1 {
+		return "title-required"
+	}
 
 	// Title Validations
-	if !isSnipEmpty.MatchString(snip.Title) {
-		return "title-required"
+	if len(snip.Description) < 1 {
+		return "description-required"
 	}
 
 	return "OK"

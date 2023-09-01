@@ -15,7 +15,7 @@ func main() {
 		for {
 			var command string
 			fmt.Printf("> ")
-			fmt.Scan(&command)
+			fmt.Scanln(&command)
 			if command == "exit" {
 				color.Green("Snip: Bye... 👋")
 				os.Exit(0)
